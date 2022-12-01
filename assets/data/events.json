@@ -2,7 +2,8 @@
   "2022-11-24": [
     {
       "id": "1",
-      "name": "Live: notJust.Hack Kickstart",
+      "name": "lorem ipsum dolor sit amet",
+
       "height": 50,
       "day": "2022-11-24"
     }
@@ -10,13 +11,15 @@
   "2022-11-25": [
     {
       "id": "2",
-      "name": "Workshop: Build any mobile application with React Native",
+      "name": "lorem ipsum dolor sit amet",
+
       "height": 50,
       "day": "2022-11-25"
     },
     {
       "id": "3",
-      "name": "Q&A session",
+      "name": "lorem ipsum dolor sit amet",
+
       "height": 50,
       "day": "2022-11-25"
     }
@@ -24,13 +27,15 @@
   "2022-11-26": [
     {
       "id": "4",
-      "name": "Workshop: Build a Chat application in hours using Stream",
+      "name": "lorem ipsum dolor sit amet",
+
       "height": 50,
       "day": "2022-11-26"
     },
     {
       "id": "5",
-      "name": "Q&A session",
+      "name": "lorem ipsum dolor sit amet",
+
       "height": 50,
       "day": "2022-11-26"
     }
@@ -38,13 +43,15 @@
   "2022-11-27": [
     {
       "id": "6",
-      "name": "Workshop: Build Full-Stack applications with Nhost",
+      "name": "lorem ipsum dolor sit amet",
+
       "height": 50,
       "day": "2022-11-27"
     },
     {
       "id": "7",
-      "name": "Q&A session",
+      "name": "lorem ipsum dolor sit amet",
+
       "height": 50,
       "day": "2022-11-27"
     }
@@ -52,7 +59,8 @@
   "2022-11-28": [
     {
       "id": "8",
-      "name": "Demo Day",
+      "name": "lorem ipsum dolor sit amet",
+
       "height": 50,
       "day": "2022-11-28"
     }
