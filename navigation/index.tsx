@@ -17,6 +17,7 @@ import { ColorSchemeName, Pressable } from 'react-native';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
+import UsersScreen from '../screens/UsersScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
@@ -26,6 +27,8 @@ import {
   RootTabScreenProps,
 } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import SignInScreen from '../screens/AuthScreens/SignInScreen';
+import SignUpScreen from '../screens/AuthScreens/SignUpScreen';
 
 export default function Navigation({
   colorScheme,
@@ -49,6 +52,23 @@ export default function Navigation({
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
+  const isAuth = false;
+  if (!isAuth) {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen
+          name="SignIn"
+          component={SignInScreen}
+          options={{ title: 'Sign in', headerShown: false }}
+        />
+        <Stack.Screen
+          name="SignUp"
+          component={SignUpScreen}
+          options={{ title: 'Create an account' }}
+        />
+      </Stack.Navigator>
+    );
+  }
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -61,6 +81,10 @@ function RootNavigator() {
         component={NotFoundScreen}
         options={{ title: 'Oops!' }}
       />
+      <Stack.Group screenOptions={{ presentation: 'modal' }}>
+        <Stack.Screen name="Modal" component={ModalScreen} />
+        <Stack.Screen name="Users" component={UsersScreen} />
+      </Stack.Group>
     </Stack.Navigator>
   );
 }
@@ -84,10 +108,18 @@ function BottomTabNavigator() {
       <BottomTab.Screen
         name="TabOne"
         component={TabOneScreen}
-        options={{
+        options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
           title: 'Tab One',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
+          headerRight: () => (
+            <Pressable
+              onPress={() => navigation.navigate('Users')}
+              style={{ marginRight: 20 }}
+            >
+              <FontAwesome name="user" size={24} color="black" />
+            </Pressable>
+          ),
+        })}
       />
       <BottomTab.Screen
         name="TabTwo"
